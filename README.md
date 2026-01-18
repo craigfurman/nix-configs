@@ -1,4 +1,4 @@
-# nix-workstations
+# nix-configs
 
 Nix config for my computer(s). Most of the functionality from
 <https://github.com/craigfurman/ansible-home> is ported over, but there will
@@ -17,7 +17,7 @@ My personal laptop makes use of
       use Homebrew to install some GUI apps that either self-update or are not
       available in nixpkgs.
 1. `nix-shell -p git git-crypt`
-1. `git clone git@github.com:craigfurman/nix-workstations.git ~/.config/nix-darwin`
+1. `git clone git@github.com:craigfurman/nix-configs.git ~/.config/nix-darwin`
 1. `cd ~/.config/nix-darwin`
 1. `git-crypt unlock <key>`
 1. `nix run nix-darwin -- switch --flake ~/.config/nix-darwin`
