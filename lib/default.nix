@@ -4,7 +4,7 @@ lib: {
       formatAutocmd =
         event: fileExtensions: command:
         let
-          globs = map (fileExtension: "*.${fileExtension}") fileExtensions;
+          globs = fileExtensions |> map (fileExtension: "*.${fileExtension}");
           targets = lib.strings.concatStringsSep "," globs;
         in
         "autocmd ${event} ${targets} ${command}";

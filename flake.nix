@@ -1,6 +1,10 @@
 {
   description = "Craig's configuration flake";
 
+  nixConfig = {
+    experimental-features = [ "nix-command flakes pipe-operators" ];
+  };
+
   inputs = {
     # darwin
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
