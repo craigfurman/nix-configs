@@ -32,6 +32,7 @@ nmap('<Leader>!', ':qa!<CR>')
 nmap('<Leader><Leader>', '<C-^>')
 nmap('<Leader>q', ':bdelete<CR>')
 vmap('Y', '"+y')
+nmap("<C-y>", ":%y+<CR>")
 
 -- return to normal mode when in terminal mode
 map('t', '<C-n>', '<C-\\><C-n>')
