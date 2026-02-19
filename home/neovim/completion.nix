@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.neovim = {
-    extraLuaConfig = builtins.readFile ./config/completion.lua;
+    initLua = builtins.readFile ./config/completion.lua;
 
     plugins = with pkgs.vimPlugins; [
       nvim-cmp

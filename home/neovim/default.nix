@@ -30,7 +30,7 @@ in
   programs.neovim = {
     enable = true;
 
-    extraLuaConfig = lib.mkBefore (builtins.readFile ./config/prelude.lua);
+    initLua = lib.mkBefore (builtins.readFile ./config/prelude.lua);
 
     plugins = with pkgs.vimPlugins; [
       # Language servers

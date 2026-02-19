@@ -19,7 +19,7 @@
         autocmd BufEnter *.gohtml set ft=html
       '';
 
-    extraLuaConfig = builtins.readFile ./go-ls.lua;
+    initLua = builtins.readFile ./go-ls.lua;
 
     extraPackages = with pkgs; [
       gopls

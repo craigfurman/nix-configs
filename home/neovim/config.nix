@@ -5,6 +5,6 @@
       autocmd BufLeave,FocusLost * silent! update
     '';
 
-    extraLuaConfig = builtins.readFile ./config/config.lua;
+    initLua = builtins.readFile ./config/config.lua;
   };
 }

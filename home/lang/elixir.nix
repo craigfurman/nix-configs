@@ -30,7 +30,7 @@
         ${flake.lib.neovim.preSaveCommand extensions "lua vim.lsp.buf.format({timeout_ms=1000})"}
       '';
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.lsp.config('elixirls', {
         cmd = { "${"${pkgs.elixir-ls}/scripts/language_server.sh"}" },
       })

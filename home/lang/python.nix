@@ -7,7 +7,7 @@
       ${flake.lib.neovim.preSaveCommand [ "py" ] "lua vim.lsp.buf.format({timeout_ms=1000})"}
     '';
 
-    extraLuaConfig = ''
+    initLua = ''
       vim.lsp.config('pylsp', {})
       vim.lsp.enable('pylsp')
     '';
