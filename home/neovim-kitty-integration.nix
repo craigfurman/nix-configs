@@ -1,21 +1,25 @@
 { pkgs, ... }:
-let
-  vim-kitty-navigator = pkgs.vimPlugins.vim-kitty-navigator;
-in
 {
-  home.file = {
-    ".config/kitty/pass_keys.py".source = "${vim-kitty-navigator}/pass_keys.py";
-    ".config/kitty/get_layout.py".source = "${vim-kitty-navigator}/get_layout.py";
-  };
-
-  programs.neovim.plugins = [ vim-kitty-navigator ];
+  programs.neovim.plugins = [ pkgs.vimPlugins.vim-kitty-navigator ];
 
   programs.kitty = {
+    extraConfig = ''
+      map --when-focus-on var:IS_VIM=true ctrl+h
+      map --when-focus-on var:IS_VIM=true ctrl+j
+      map --when-focus-on var:IS_VIM=true ctrl+k
+      map --when-focus-on var:IS_VIM=true ctrl+l
+
+      map --when-focus-on var:IS_VIM=true alt+down
+      map --when-focus-on var:IS_VIM=true alt+up
+      map --when-focus-on var:IS_VIM=true alt+left
+      map --when-focus-on var:IS_VIM=true alt+right
+    '';
+
     keybindings = {
-      "alt+down" = "kitten pass_keys.py bottom ctrl+j";
-      "alt+up" = "kitten pass_keys.py top ctrl+k";
-      "alt+left" = "kitten pass_keys.py left ctrl+h";
-      "alt+right" = "kitten pass_keys.py right ctrl+l";
+      "alt+down" = "neighboring_window down";
+      "alt+up" = "neighboring_window up";
+      "alt+left" = "neighboring_window left";
+      "alt+right" = "neighboring_window right";
     };
 
     settings = {
@@ -23,4 +27,11 @@ in
       listen_on = "unix:/tmp/mykitty";
     };
   };
+
+  programs.neovim.initLua = ''
+    nmap('<A-down>', ':KittyNavigateDown<CR>')
+    nmap('<A-up>', ':KittyNavigateUp<CR>')
+    nmap('<A-left>', ':KittyNavigateLeft<CR>')
+    nmap('<A-right>', ':KittyNavigateRight<CR>')
+  '';
 }
