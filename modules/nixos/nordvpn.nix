@@ -21,6 +21,7 @@ let
       libnl,
       libxml2,
       procps,
+      sqlite,
       stdenv,
       sysctl,
       wireguard-tools,
@@ -28,19 +29,20 @@ let
     }:
     let
       pname = "nordvpn";
-      version = "3.20.2";
+      version = "4.5.0";
 
       nordVPNBase = stdenv.mkDerivation {
         inherit pname version;
 
         src = fetchurl {
           url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${version}_amd64.deb";
-          hash = "sha256-2eLVr0aQpMhIMCrkyIRcCabXc197GJZ31Vl5BND7Di8=";
+          hash = "sha256-bekJOzhLGwFsYRuPagANwUduyCufaU4XoJPwWoBniR8=";
         };
 
         buildInputs = [
           libxml2
           libidn2
+          sqlite
         ];
         nativeBuildInputs = [
           autoPatchelfHook

@@ -27,7 +27,7 @@ in
       User ${config.system.primaryUser}
 
     Host thwomp
-      Hostname 192.168.1.105
+      Hostname 192.168.1.165
       ForwardAgent yes
       User ${config.system.primaryUser}
   '';
