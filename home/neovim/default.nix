@@ -50,6 +50,7 @@ in
           highlight Added cterm=NONE gui=NONE
           highlight Removed cterm=NONE gui=NONE
         '';
+        type = "viml";
       }
       (pluginLua "lualine-nvim")
 
