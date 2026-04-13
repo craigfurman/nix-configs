@@ -59,9 +59,6 @@ in
       (pluginLua "nvim-tree-lua")
       nvim-web-devicons
 
-      # folds
-      (pluginLua "nvim-ufo")
-
       (pluginLua "vim-test")
 
       # Core
