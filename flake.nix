@@ -6,53 +6,35 @@
   };
 
   inputs = {
-    # darwin
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    hm-darwin = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
-    # linux
-    nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    hm-linux = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixos-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs =
     {
-      nixpkgs-unstable,
+      nixpkgs,
+      home-manager,
       nix-darwin,
-      hm-darwin,
-
-      nixos-unstable,
-      hm-linux,
-
       self,
     }:
     let
-      lib = nixpkgs-unstable.lib;
+      lib = nixpkgs.lib;
       overlay = import ./overlay.nix;
 
       forSystem =
         system: systemFn:
         let
-          nixpkgs =
-            if nixpkgs-unstable.legacyPackages.${system}.stdenv.isLinux then
-              nixos-unstable
-            else
-              nixpkgs-unstable;
           pkgs = import nixpkgs {
             inherit system;
             overlays = [ overlay ];
           };
-          home-manager = if pkgs.stdenv.isLinux then hm-linux else hm-darwin;
         in
         systemFn {
           inherit
