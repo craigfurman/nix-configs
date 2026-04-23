@@ -14,7 +14,7 @@
     enable = true;
 
     configurationLimit = 5;
-    device = "/dev/sdd";
+    device = "/dev/disk/by-id/usb-SanDisk_Cruzer_Fit_4C530001031205122164-0:0";
   };
 
   environment.etc =
