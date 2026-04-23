@@ -21,6 +21,8 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 
+opt.updatetime = 100
+
 -- Stay in visual mode after changing indentation
 vmap('<', '<gv')
 vmap('>', '>gv')
