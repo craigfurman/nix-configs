@@ -15,6 +15,7 @@
           # "brave-browser" # TODO uncomment on a fresh machine
           "discord"
           "google-chrome"
+          "nestopia"
           "obsidian"
           "rectangle"
           "signal"
