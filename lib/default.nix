@@ -1,7 +1,7 @@
 lib: {
   neovim =
     let
-      formatAutocmd =
+      autoCmd =
         event: fileExtensions: command:
         let
           globs = fileExtensions |> map (fileExtension: "*.${fileExtension}");
@@ -10,7 +10,8 @@ lib: {
         "autocmd ${event} ${targets} ${command}";
     in
     {
-      fileOpenCommand = formatAutocmd "BufEnter";
-      preSaveCommand = formatAutocmd "BufWritePre";
+      inherit autoCmd;
+      fileOpenCommand = autoCmd "BufEnter";
+      preSaveCommand = autoCmd "BufWritePre";
     };
 }
