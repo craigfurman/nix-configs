@@ -11,6 +11,11 @@
     ./nvidia.nix
   ];
 
+  # https://github.com/NixOS/nixpkgs/issues/526914
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
+
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
