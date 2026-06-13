@@ -3,3 +3,4 @@ nmap('<leader>fg', '<cmd>Telescope live_grep<cr>')
 nmap('<leader>fb', '<cmd>Telescope buffers<cr>')
 nmap('<leader>fm', '<cmd>Telescope marks<cr>')
 nmap('<leader>fo', ':Telescope ', {noremap=true}) -- find other, not silent as prompt
+nmap('<leader>fa', 'yiw<cmd>Telescope live_grep<cr><C-r>"')
