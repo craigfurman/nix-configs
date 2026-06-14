@@ -36,7 +36,10 @@
       Todoist = 585829637;
     };
 
-    onActivation.cleanup = "zap";
+    onActivation = {
+      cleanup = "zap";
+      extraFlags = [ "--force-cleanup" ];
+    };
   };
 
 }
