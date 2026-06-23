@@ -13,6 +13,7 @@
           # casks that auto-update, and therefore don't need to be brew-upgraded
           # once installed
           # "brave-browser" # TODO uncomment on a fresh machine
+          "blackhole-2ch"
           "discord"
           "google-chrome"
           "nestopia"
