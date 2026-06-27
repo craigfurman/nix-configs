@@ -22,12 +22,10 @@ in
 {
   programs.ssh.extraConfig = ''
     Host chargin-chuck
-      Hostname 192.168.1.217
       ForwardAgent yes
       User ${config.system.primaryUser}
 
     Host thwomp
-      Hostname 192.168.1.165
       ForwardAgent yes
       User ${config.system.primaryUser}
   '';
