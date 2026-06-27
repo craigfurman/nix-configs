@@ -25,4 +25,5 @@
     overlays = [ overlay ];
   };
 
+  programs.tmux.enable = true;
 }
