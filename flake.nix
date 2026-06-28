@@ -115,6 +115,7 @@
             let
               gnomeExtensions = [
                 "appindicator"
+                "clipboard-history"
                 "no-overview"
               ];
             in
