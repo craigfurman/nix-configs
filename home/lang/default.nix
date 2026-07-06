@@ -1,6 +1,5 @@
 {
   imports = [
-    ./csharp.nix
     ./elixir.nix
     ./gdscript.nix
     ./go.nix
