@@ -1,10 +1,5 @@
 { flake, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    go
-    golangci-lint
-  ];
-
   programs.neovim = {
     craigf.treesitterParsers = [ "go" ];
 
@@ -22,8 +17,9 @@
     initLua = builtins.readFile ./go-ls.lua;
 
     extraPackages = with pkgs; [
-      gopls
+      golangci-lint
       golangci-lint-langserver
+      gopls
     ];
   };
 }

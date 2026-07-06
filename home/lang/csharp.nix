@@ -1,7 +1,5 @@
 { flake, pkgs, ... }:
 {
-  home.packages = with pkgs; [ dotnet-sdk_8 ];
-
   programs.neovim = {
     craigf.treesitterParsers = [ "c_sharp" ];
 
