@@ -21,16 +21,14 @@
           "html"
           "json"
           "lua"
+          "ruby"
+          "vim"
+          "vimdoc"
+          "yaml"
 
           # Needed for Lspsaga hover_doc
           "markdown"
           "markdown_inline"
-
-          "ruby"
-          "rust"
-          "vim"
-          "vimdoc"
-          "yaml"
         ];
         parsers = config.programs.neovim.craigf.treesitterParsers ++ baseParsers;
         nvim-treesitter = {
