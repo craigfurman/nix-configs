@@ -39,7 +39,6 @@
 
     onActivation = {
       cleanup = "zap";
-      extraFlags = [ "--force-cleanup" ];
     };
   };
 
