@@ -2,11 +2,6 @@
   homebrew = {
     enable = true;
 
-    brews = [
-      # Don't uninstall mas after every run
-      { name = "mas"; }
-    ];
-
     casks =
       let
         casks = [
@@ -29,13 +24,6 @@
         ];
       in
       map (cask: { name = cask; }) casks;
-
-    masApps = {
-      Bitwarden = 1352778147;
-      Flycut = 442160987;
-      NordVPN = 905953485;
-      Todoist = 585829637;
-    };
 
     onActivation = {
       cleanup = "zap";
