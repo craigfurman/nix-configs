@@ -5,7 +5,7 @@
 }:
 {
   home.packages = with pkgs; [
-    elixir
+    beamPackages.elixir
   ];
 
   home.sessionVariables = {

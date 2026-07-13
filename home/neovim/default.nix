@@ -69,6 +69,9 @@ in
       vim-surround
       which-key-nvim
     ];
+
+    withPython3 = false;
+    withRuby = false;
   };
 
   programs.zsh.shellAliases = {
