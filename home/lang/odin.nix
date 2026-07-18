@@ -1,0 +1,18 @@
+{ flake, pkgs, ... }:
+{
+  programs.neovim = {
+    craigf.treesitterParsers = [ "odin" ];
+
+    extraConfig = ''
+      ${flake.lib.neovim.preSaveCommand [ "odin" ] "lua vim.lsp.buf.format()"}
+    '';
+
+    initLua = ''
+      vim.lsp.enable('ols')
+    '';
+
+    extraPackages = with pkgs; [
+      ols
+    ];
+  };
+}
