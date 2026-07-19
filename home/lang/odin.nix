@@ -1,4 +1,4 @@
-{ flake, pkgs, ... }:
+{ flake, ... }:
 {
   programs.neovim = {
     craigf.treesitterParsers = [ "odin" ];
@@ -11,9 +11,5 @@
     initLua = ''
       vim.lsp.enable('ols')
     '';
-
-    extraPackages = with pkgs; [
-      ols
-    ];
   };
 }
