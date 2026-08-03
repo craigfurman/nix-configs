@@ -7,6 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./nordvpn.nix
     ./suspend-nightly.nix
   ];
 
@@ -66,11 +67,6 @@
     isNormalUser = true;
     description = "Craig Furman";
     extraGroups = [ "wheel" ];
-  };
-
-  services.nordvpn = {
-    enable = true;
-    users = [ "craig" ];
   };
 
   services.plex = {

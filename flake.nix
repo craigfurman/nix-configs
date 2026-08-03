@@ -150,7 +150,6 @@
             modules = [
               ./machines/thwomp
               ./modules/nixos/base
-              ./modules/nixos/nordvpn.nix
             ];
 
             specialArgs = {

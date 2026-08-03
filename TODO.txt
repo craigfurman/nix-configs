@@ -1,6 +1,3 @@
-thwomp
-- switch to upstream nordvpn when that PR is merged
-
 Currently unsupported settings (darwin)
 - Turn keyboard backlight off after 5s
 - Night shift
