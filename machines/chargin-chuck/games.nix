@@ -17,7 +17,7 @@
       );
     in
     [
-      azahar
+      # azahar # TODO build failure
       dualsensectl
       dolphin-emu
       retroarchWithCores
