@@ -54,7 +54,7 @@ lib.recursiveUpdate {
         unixtools.watch
         wget
       ]
-      ++ lib.optional pkgs.stdenv.isDarwin [ lima ]
+      ++ lib.optional pkgs.stdenv.hostPlatform.isDarwin [ lima ]
     );
 
   nix = {
@@ -90,5 +90,5 @@ lib.recursiveUpdate {
   };
 
   programs.zoxide.enable = true;
-  services.autokbisw.enable = pkgs.stdenv.isDarwin;
+  services.autokbisw.enable = pkgs.stdenv.hostPlatform.isDarwin;
 } extra

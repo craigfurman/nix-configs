@@ -23,7 +23,7 @@ in
 
   home.file.".config/nvim/lua/hack.lua".source =
     let
-      flakeName = if pkgs.stdenv.isDarwin then "nix-darwin" else "nixos";
+      flakeName = if pkgs.stdenv.hostPlatform.isDarwin then "nix-darwin" else "nixos";
     in
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/${flakeName}/home/neovim/config/hack.lua";
 

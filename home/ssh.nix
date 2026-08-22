@@ -6,7 +6,7 @@
     extraOptionOverrides =
       let
         systemOptions =
-          if pkgs.stdenv.isDarwin then
+          if pkgs.stdenv.hostPlatform.isDarwin then
             {
               UseKeychain = "yes";
             }

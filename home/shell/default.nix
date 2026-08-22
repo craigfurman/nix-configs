@@ -9,7 +9,7 @@ in
 {
   imports = [ ./hack.nix ];
 
-  home.packages = lib.mkIf pkgs.stdenv.isDarwin [ pkgs.coreutils-prefixed ];
+  home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ pkgs.coreutils-prefixed ];
 
   home.sessionVariables = {
     EDITOR = "nvim";

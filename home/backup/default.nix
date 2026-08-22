@@ -28,7 +28,7 @@ in
     home.packages = [ restic ];
 
     launchd.agents.restic-backup = {
-      enable = config.backup.enableService && pkgs.stdenv.isDarwin;
+      enable = config.backup.enableService && pkgs.stdenv.hostPlatform.isDarwin;
       config = {
         ProgramArguments = [
           "${pkgs.bash}/bin/bash"

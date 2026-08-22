@@ -32,7 +32,7 @@
       scrollback_pager_history_size = 10; # MB
     }
     // (
-      if pkgs.stdenv.isDarwin then
+      if pkgs.stdenv.hostPlatform.isDarwin then
         {
           macos_option_as_alt = "left";
           macos_quit_when_last_window_closed = true;

@@ -1,5 +1,5 @@
 { lib, pkgs, ... }:
-lib.mkIf pkgs.stdenv.isDarwin {
+lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
   home.activation.makeTrampolineApps = lib.hm.dag.entryAfter [ "writeBoundary" ] (
     builtins.readFile ./make-app-trampolines.sh
   );
