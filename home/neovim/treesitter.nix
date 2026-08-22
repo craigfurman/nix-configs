@@ -14,6 +14,7 @@
     programs.neovim.plugins =
       let
         baseParsers = [
+          "bash"
           "comment"
           "cpp"
           "css"
