@@ -160,6 +160,14 @@
         }
       );
 
+      templates = {
+        default = {
+          path = ./templates/default;
+        };
+      };
+
+      defaultTemplate = self.templates.default;
+
       formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt);
     };
 }
