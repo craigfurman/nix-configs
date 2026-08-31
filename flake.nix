@@ -166,8 +166,6 @@
         };
       };
 
-      defaultTemplate = self.templates.default;
-
       formatter = forAllSystems ({ pkgs, ... }: pkgs.nixfmt);
     };
 }
