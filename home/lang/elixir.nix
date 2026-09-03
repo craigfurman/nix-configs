@@ -3,8 +3,15 @@
   pkgs,
   ...
 }:
+let
+  beamPackages = pkgs.beamPackages.overrideScope (
+    final: prev: {
+      elixir = final.elixir_1_20;
+    }
+  );
+in
 {
-  home.packages = with pkgs; [
+  home.packages = [
     beamPackages.elixir
   ];
 
@@ -32,7 +39,7 @@
 
     initLua = ''
       vim.lsp.config('elixirls', {
-        cmd = { "${"${pkgs.elixir-ls}/scripts/language_server.sh"}" },
+        cmd = { "${"${beamPackages.elixir-ls}/scripts/language_server.sh"}" },
       })
       vim.lsp.enable('elixirls')
     '';
