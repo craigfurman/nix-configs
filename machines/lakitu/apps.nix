@@ -17,7 +17,6 @@
           "signal"
           "slack"
           "steam"
-          "tiled"
           "visual-studio-code"
           "vlc"
           "whatsapp"
