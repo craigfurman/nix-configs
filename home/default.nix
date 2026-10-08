@@ -18,7 +18,7 @@ lib.recursiveUpdate {
   home.stateVersion = "24.11";
 
   imports = [
-    ./apps
+    ./apps.nix
     ./backup
     ./dconf.nix
     ./git.nix
