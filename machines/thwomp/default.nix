@@ -18,6 +18,10 @@
     device = "/dev/disk/by-id/usb-SanDisk_Cruzer_Fit_4C530001031205122164-0:0";
   };
 
+  services.journald.settings.Journal = {
+    Storage = "volatile";
+  };
+
   environment.etc =
     let
       privateFile = text: {
