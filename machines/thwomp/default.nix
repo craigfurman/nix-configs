@@ -89,6 +89,7 @@
       download-dir = "/media/data/Downloads";
       encryption = 1;
       message-level = 1;
+      incomplete-dir-enabled = false;
       rpc-bind-address = "0.0.0.0";
       rpc-enabled = true;
       rpc-port = 9091;
