@@ -26,6 +26,8 @@
   networking.hostName = "chargin-chuck";
   networking.networkmanager.enable = true;
 
+  nix.optimise.automatic = true;
+
   time.timeZone = "Europe/London";
 
   i18n.defaultLocale = "en_GB.UTF-8";
