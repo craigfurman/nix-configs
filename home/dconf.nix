@@ -36,6 +36,10 @@
           gnomeExtension: pkgs.gnomeExtensions.${gnomeExtension}.extensionUuid
         ) gnomeExtensions;
       };
+
+      "org/gnome/settings-daemon/plugins/housekeeping" = {
+        donation-reminder-enabled = false;
+      };
     };
   };
 }
